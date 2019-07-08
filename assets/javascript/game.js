@@ -298,10 +298,19 @@ Object.defineProperties(game, {
 	"chooseOptions": { value: function() {
 		display.showOptions();
 
+		game.currentSource = 'lu0721';
 		easy();
 		display.changeTheme();
 		audio.play("intro");
 
+		console.log("chooseOptions...1");
+		console.log($("select[id='source-text']"));
+		$("select[id='source-text']").on('change', function() {
+			game.currentSource = this.value;
+		});
+		console.log("chooseOptions...2");
+		
+		console.log($("select[name='source-text']").val());
 		$("input[type=radio][name=options]").on('change', function() {
 			audio.pause("intro");
 
