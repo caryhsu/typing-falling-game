@@ -95,9 +95,6 @@ Object.defineProperties(display, {
 			<div>\
 				<div id='big-source'>\
 					<select id='source-text'>\
-						<option value='lu0707'>盧克英文-0707</option>\
-						<option value='lu0714'>盧克英文-0714</option>\
-						<option value='lu0721' selected>盧克英文-0721</option>\
 					</select>\
 				</div>\
 			</div>\

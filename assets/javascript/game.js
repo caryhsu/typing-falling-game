@@ -298,7 +298,18 @@ Object.defineProperties(game, {
 	"chooseOptions": { value: function() {
 		display.showOptions();
 
-		game.currentSource = 'lu0721';
+		var sourceArray = ['luke-week01', 'luke-week02', 'luke-week03'];
+		game.currentSource = 'luke-week03';
+
+		$("select[id='source-text']").empty();
+		
+		var optionsAsString = "";
+		for(var i = 0; i < sourceArray.length; i++) {
+			optionsAsString += "<option value='" + sourceArray[i] + "'>" + sourceArray[i] + "</option>";
+		}
+		console.log(optionsAsString);
+		$("select[id='source-text']").append(optionsAsString);
+		$("select[id='source-text']").val(game.currentSource);
 		easy();
 		display.changeTheme();
 		audio.play("intro");
@@ -334,37 +345,34 @@ Object.defineProperties(game, {
 		});
 
 		function easy() {
-			game.currentSource = "custom";
 			game.currentDifficulty = "easy";
-			game.lives = 50;
+			game.lives = 5;
 			game.startingTimeout = 3000;
 			game.minTimeout = 1800;
 			game.maxWords = 4;
-			game.wordSpeed = 3500;
+			game.wordSpeed = 4000;
 
 			stats.difficultyMultiplier = 100;
 		}
 
 		function hard() {
-			game.currentSource = "hipster";
 			game.currentDifficulty = "hard";
-			game.lives = 5;
+			game.lives = 3;
 			game.startingTimeout = 2500;
 			game.minTimeout = 1500;
 			game.maxWords = 5;
-			game.wordSpeed = 1000;
+			game.wordSpeed = 2000;
 
 			stats.difficultyMultiplier = 200;
 		}
 
 		function insane() {
-			game.currentSource = "random";
 			game.currentDifficulty = "insane";
-			game.lives = 5;
+			game.lives = 1;
 			game.startingTimeout = 2100;
 			game.minTimeout = 1000;
 			game.maxWords = 6;
-			game.wordSpeed = 600;
+			game.wordSpeed = 1000;
 
 			stats.difficultyMultiplier = 300;
 		}
