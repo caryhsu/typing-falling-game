@@ -94,8 +94,8 @@ Object.defineProperties(display, {
 		const template = "\
 			<div>\
 				<div id='big-source'>\
-					<span id='source-text'>bacon</span>\
-					<select>\
+					<span id='source-text1'>bacon</span>\
+					<select id='source-text'>\
 						<option value='+47'>Norge (+47)</option>\
 						<option value='+46'>Sverige (+46)</option>\
 						<option value='+45'>Danmark (+45)</option>\
@@ -104,7 +104,7 @@ Object.defineProperties(display, {
 				</div>\
 			</div>\
 			<div>\
-	  		<div id='source-info'>Take it easy with a savory helping of meaty deliciousness. &nbsp;Delicious words, that is.</div>\
+	  		\
 	  	</div><br/><br/>\
 			<div class='btn-group btn-group-main' data-toggle='buttons'>\
 				<label class='btn btn-success btn-diff active'><input type='radio' name='options' id='easy' autocomplete='off' checked> Easy </label>\
@@ -127,14 +127,14 @@ Object.defineProperties(display, {
 
 	"changeTheme": { value: function(){
 		const info = {
-			easy: "Take it easy with a savory helping of meaty deliciousness. &nbsp;Delicious words, that is.",
-			hard: "Retro at its finest? &nbsp;Meh, at least you can #humblebrag about your high score.",
-			insane: "Words straight from the depths of hell. &nbsp;If you like that sort of thing, we won't judge."
+			//easy: "Take it easy with a savory helping of meaty deliciousness. &nbsp;Delicious words, that is.",
+			//hard: "Retro at its finest? &nbsp;Meh, at least you can #humblebrag about your high score.",
+			//insane: "Words straight from the depths of hell. &nbsp;If you like that sort of thing, we won't judge."
 		};
 
 		if ($("#bg").length) {
-			$("#source-text").velocity({ opacity: 0 }, { complete: function() { $("#source-text").html(game.currentSource).velocity({ opacity: 1 }) }});
-			$("#source-info").velocity({ opacity: 0 }, { complete: function() { $("#source-info").html(info[game.currentDifficulty]).velocity({ opacity: 1 }) }});
+			//$("#source-text").velocity({ opacity: 0 }, { complete: function() { $("#source-text").html(game.currentSource).velocity({ opacity: 1 }) }});
+			//$("#source-info").velocity({ opacity: 0 }, { complete: function() { $("#source-info").html(info[game.currentDifficulty]).velocity({ opacity: 1 }) }});
 		}
 
 		$(document.body).css("background-image", "none").velocity({ backgroundColor: "#cccccc"}, {duration: 800});
