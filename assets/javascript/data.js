@@ -4,7 +4,8 @@
 const data = {
 	// Word lists from APIs
 	lukeWords: {
-		'week01' : ['accept', 'account', 'achieve', 'across', 'active', 'actually', 'adult', 'advice', 'African', 'against', 'allow', 'altogether', 'angel', 'appeal', 'appropriate', 'argument', 'arrange'],
+		'week01' : ['achieve', 'active', 'actually', 'African', 'against', 'altogether', 'appeal', 'appropriate', 'argument'],
+		'week02' : ['association', 'astrology', 'athlete', 'attract', 'available'],
 	},
 	lukeSources: ['luke-week01'],
 
