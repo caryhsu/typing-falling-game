@@ -27,7 +27,7 @@ const game = {
 
 	// Constants
 	speedupFactor: 1.001,  // Muliplier for the rate at which new words are added, applies after each added word
-	wordBuffer: 10,  // Minimum buffer of source words (will trigger an XHR more if sourceWords.length < wordBuffer)
+	wordBuffer: -1,  // Minimum buffer of source words (will trigger an XHR more if sourceWords.length < wordBuffer)
 	missTimeout: 180,  // Msec after which a miss is triggered where new input is not allowed (like iFrames)
 
 
@@ -206,13 +206,22 @@ Object.defineProperties(game, {
 		game.sourceWords.splice(0, 1);
 
 		// Get more words if sourceWords is running low
-		if (game.sourceWords.length < game.wordBuffer) { game.sourceWords = data.get(game.currentSource); }
+		if (game.sourceWords.length < game.wordBuffer || game.sourceWords.length == 0) { 
+			game.sourceWords = data.get(game.currentSource); 
+			console.log("<<<");
+			console.log(game.sourceWords);
+		}
 
 		// Show word on screen
+		console.log("game.js:" + "addWord:");
+		console.log(word);
 		display.addWord(word);
 
 		game.activeWords.push(word);
 		game.currentWord++;
+		console.log(game.currentWord);
+		console.log(game.sourceWords);
+		console.log(game.activeWords);
 	}},
 
 	"removeWord": { value: function(word) {
@@ -298,8 +307,8 @@ Object.defineProperties(game, {
 	"chooseOptions": { value: function() {
 		display.showOptions();
 
-		var sourceArray = ['luke-week01', 'luke-week02', 'luke-week03'];
-		game.currentSource = 'luke-week03';
+		var sourceArray = data.getSources();
+		game.currentSource = sourceArray[sourceArray.length - 1];
 
 		$("select[id='source-text']").empty();
 		

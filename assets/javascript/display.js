@@ -141,6 +141,8 @@ Object.defineProperties(display, {
 	}},
 
 	"addWord": { value: function(word) {
+		console.log("addWord:");
+		console.log(word);
 		// Create and output series of spans for each character in the word
 		let html = "<div id='word_" + word.number + "' class='falling-word'><div id='word_" + word.number + "_wrapper'><h2>";
 		for (let i = 0; i < word.str.length; i++) {
