@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Type or Die: Leaderboard</title>
+
+	<!-- Bootstrap CDN-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Galada|Bungee+Shade|Amatica+SC|Source+Code+Pro|Chewy|Kaushan+Script|Permanent+Marker" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Start Navbar -->
+  <nav id="nav" class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Game</a></li>
+          <li class="active"><a href="leaderboard.html">Leaderboard <span class="sr-only">(current)</span></a></li>
+          <!-- <li><a href="about.html">About</a></li> -->
+        </ul>
+      </div>
+    </div>
+  </nav> <!-- End Navbar -->
+
+	<div class="container">
+    <div class="row">
+      <div class="col-lg-12"><h1 id="title" class="text-center">Type or <span id="red-intro">Die</span></h1></div>
+    </div>
+
+    <!-- Start High Score -->
+    <div class="row fade-in">
+      <div class="col-lg-12">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <span class="panel-title panel-title-text"><h3>All-time High Scores:</h3></span>
+            <span class="btn-group btn-score" data-toggle="buttons">
+              <label class="btn btn-success btn-diff active">
+                <input type="radio" name="scoreList" id="easy-list" value="easy" autocomplete="off" checked> Easy 
+              </label>
+              <label class="btn btn-warning btn-diff">
+                <input type="radio" name="scoreList" id="hard-list" value="hard" autocomplete="off"> Hard 
+              </label>
+              <label class="btn btn-danger btn-diff">
+                <input type="radio" name="scoreList" id="insane-list" value="insane" autocomplete="off"> Insane 
+              </label>
+            </span>
+          </div>
+
+          <div class="panel-body" id="leaderboard-panel">
+            <table class="table table-hover" id="score-table">
+              <thead id="leaderboard-heading"></thead>
+              <tbody id="leaderboard-stats"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div> <!-- End High Score -->
+
+	</div> <!-- End Container -->
+
+	<footer class="footer">
+    <div class="container">
+      <p class="text-center footer-text">Copyright 2016 by Daniel Arnost, Matt Davis, and Andres Saenz</p>
+    </div>
+  </footer>
+
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <script src="assets/javascript/velocity.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
+  <script src="assets/javascript/leaderboard.js"></script>
+	<script src="assets/javascript/app.js"></script>
+</body>
+</html>
